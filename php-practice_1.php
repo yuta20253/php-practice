@@ -1,64 +1,65 @@
 <?php
 // Q1 変数と文字列
 $name = '安本';
-echo '私の名前は「' . $name . '」です' . PHP_EOL;
+echo '私の名前は「' . $name . '」です' . "\n";
 
 // Q2 四則演算
 $num = 5 * 4;
-echo $num . PHP_EOL;
+echo $num . "\n";
 
 $divNum = $num / 2;
-echo $divNum . PHP_EOL;
+echo $divNum . "\n";
 
 // Q3 日付操作
 $date = date('Y年m月j日 G時i分s秒');
-echo '現在時刻は' . $date . 'です。' . PHP_EOL;
+echo '現在時刻は' . $date . 'です。' . "\n";
 
 // Q4 条件分岐-1 if文
-$device = 'mac';
+$device = 'windows';
 
-if ($device == 'aaa') {
-    echo '使用OSは、windowsです。' . PHP_EOL;
+if ($device === "mac") {
+    echo '使用OSは、macです。' . "\n";
 } else {
-    if ($device == 'mac') {
-        echo '使用OSは、macです。' . PHP_EOL;
-        return;
+    if ($device === "windows") {
+        echo '使用OSは、windowsです。' . "\n";
+    } else {
+        echo 'どちらでもありません。' . "\n";
     }
-    echo 'どちらでもありません。' . PHP_EOL;
+    
 }
 
 // Q5 条件分岐-2 三項演算子
 $age = 20;
 $message = $age < 18 ? '未成年です。' : '成人です';
-var_dump($message) . PHP_EOL;
-echo $message . PHP_EOL;
+var_dump($message) . "\n";
+echo $message . "\n";
 
 
 // Q6 配列
 $kantoArr = ['東京都', '神奈川県', '栃木県', '千葉県', '埼玉県', '群馬県', '茨城県'];
-echo "{$kantoArr[2]}と{$kantoArr[3]}は関東地方の都道府県です。" . PHP_EOL;
+echo "{$kantoArr[2]}と{$kantoArr[3]}は関東地方の都道府県です。" . "\n";
 
 // Q7 連想配列-1
-$kantoObj = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
-foreach ($kantoObj as $value) {
-    echo "{$value}" . PHP_EOL;
+$kantoPrefectureAndCityArr = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
+foreach ($kantoPrefectureAndCityArr as $value) {
+    echo "{$value}" . "\n";
 }
 
 // Q8 連想配列-2
-$kantoObj = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
-foreach ($kantoObj as $key => $value) {
+$kantoPrefectureAndCityArr = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市'];
+foreach ($kantoPrefectureAndCityArr as $key => $value) {
     if ($key == '埼玉県') {
-        echo "{$key}の県庁所在地は、{$value}です。" . PHP_EOL;
+        echo "{$key}の県庁所在地は、{$value}です。" . "\n";
     }
 }
 
 // Q9 連想配列-3
-$kantoObj = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '愛知県' => '名古屋市', '大阪府' => '大阪市'];
-foreach ($kantoObj as $key => $value) {
+$kantoPrefectureAndCityArr = ['東京都' => '新宿区', '神奈川県' => '横浜市', '千葉県' => '千葉市', '埼玉県' => 'さいたま市', '栃木県' => '宇都宮市', '群馬県' => '前橋市', '茨城県' => '水戸市', '愛知県' => '名古屋市', '大阪府' => '大阪市'];
+foreach ($kantoPrefectureAndCityArr as $key => $value) {
     if ($key == '大阪府' || $key == '愛知県' ) {
-        echo "{$key}は関東地方ではありません。" . PHP_EOL;
+        echo "{$key}は関東地方ではありません。" . "\n";
     } else {
-        echo "{$key}の県庁所在地は{$value}です。" . PHP_EOL;
+        echo "{$key}の県庁所在地は{$value}です。" . "\n";
     }
     
 }
@@ -66,7 +67,7 @@ foreach ($kantoObj as $key => $value) {
 // Q10 関数-1
 function hello ($name) 
 {
-    echo "{$name}さん、こんにちは。" . PHP_EOL;
+    echo "{$name}さん、こんにちは。" . "\n";
 }
 
 $name = '山田';
@@ -91,9 +92,9 @@ echo "{$price}円の商品の税込価格は{$taxInPrice}円です。";
 function distinguishNum ($num)
 {
     if ($num % 2 == 0) {
-        echo "{$num}は偶数です。" . PHP_EOL;
+        echo "{$num}は偶数です。" . "\n";
     } else {
-        echo "{$num}は奇数です。" . PHP_EOL;
+        echo "{$num}は奇数です。" . "\n";
     }
 }
 
@@ -106,16 +107,16 @@ function evaluateGrade($grades)
     switch ($grades) {
         case 'A':
         case 'B':
-            echo "合格です。" . PHP_EOL;
+            echo "合格です。" . "\n";
             break;
         case 'C':
-            echo "合格ですが追加課題があります。" . PHP_EOL;
+            echo "合格ですが追加課題があります。" . "\n";
             break;
         case 'D':
-            echo "不合格です。" . PHP_EOL;
+            echo "不合格です。" . "\n";
             break;
         default:
-            echo '判定不明です。講師に問い合わせてください。' . PHP_EOL;
+            echo '判定不明です。講師に問い合わせてください。' . "\n";
             break;
     }    
 }

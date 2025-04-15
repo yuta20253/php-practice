@@ -1,14 +1,14 @@
 <?php
 // Q1 tic-tac問題
-for ($i = 1; $i < 101; $i++) {
+for ($i = 1; $i <= 100; $i++) {
     if ($i % 4 == 0 && $i % 5 == 0) {
-        echo "tic-tac" . PHP_EOL;
+        echo "tic-tac" . "\n";
     } elseif ($i % 4 == 0) {
-        echo "tic" . PHP_EOL;  
+        echo "tic" . "\n";  
     } elseif ($i % 5 == 0) {
-        echo "tac" . PHP_EOL; 
+        echo "tac" . "\n"; 
     } else {
-       echo $i . PHP_EOL;
+       echo $i . "\n";
     }
 }
 
@@ -35,13 +35,13 @@ $personalInfos = [
 
 $personalInfos;
 
-echo "{$personalInfos[1]['name']}の電話番号は{$personalInfos[1]['tel']}です。" . PHP_EOL;
+echo "{$personalInfos[1]['name']}の電話番号は{$personalInfos[1]['tel']}です。" . "\n";
 
 //2.
 
 foreach ($personalInfos as $key => $value) {
     $num = (int)$key + 1;
-    echo "{$num}番目の{$value['name']}のメールアドレスは{$value['mail']}で、電話番号は{$value['tel']}です。" . PHP_EOL;
+    echo "{$num}番目の{$value['name']}のメールアドレスは{$value['mail']}で、電話番号は{$value['tel']}です。" . "\n";
 }
 
 //3.
@@ -49,7 +49,6 @@ foreach ($personalInfos as $key => $value) {
 $ageList = [25, 30, 18];
 
 foreach ($ageList as $key => $value) {
-    echo $value . PHP_EOL;
     $personalInfos[$key]['age'] = $value;
 }
 
@@ -103,18 +102,18 @@ $student->attend('PHP');
 // Q5 定義済みクラス
 //1.
 $dt = new DateTime();
-print $dt->format('Y-m-d') . PHP_EOL;
+print $dt->format('Y-m-d') . "\n";
 
 $dt->modify('- 1 month');
-print $dt->format('Y-m-d') . PHP_EOL;
+print $dt->format('Y-m-d') . "\n";
 
 //2.
 $dt = new DateTime();
-print $dt->format('Y-m-d') . PHP_EOL;
+print $dt->format('Y-m-d') . "\n";
 
 $beforeDate = new DateTime('1992-4-25');
-print $beforeDate->format('Y-m-d') . PHP_EOL;
+print $beforeDate->format('Y-m-d') . "\n";
 
 $interval = $dt->diff($beforeDate, true)->days;
-echo "あの日から{$interval}日経過しました。" . PHP_EOL;
+echo "あの日から{$interval}日経過しました。" . "\n";
 
