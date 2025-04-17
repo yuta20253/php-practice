@@ -17,15 +17,10 @@ echo '現在時刻は' . $date . 'です。' . "\n";
 // Q4 条件分岐-1 if文
 $device = 'windows';
 
-if ($device === "mac") {
-    echo '使用OSは、macです。' . "\n";
+if ($device === "mac" || $device === "windows") {
+    echo "使用OSは、" . $device . "です。" . "\n";
 } else {
-    if ($device === "windows") {
-        echo '使用OSは、windowsです。' . "\n";
-    } else {
-        echo 'どちらでもありません。' . "\n";
-    }
-    
+    echo 'どちらでもありません。' . "\n";
 }
 
 // Q5 条件分岐-2 三項演算子
